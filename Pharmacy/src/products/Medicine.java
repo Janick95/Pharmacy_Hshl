@@ -13,4 +13,5 @@ public class Medicine {
 		boolean availability;
 		int pzn;
 		String category;
+		String form;
 }
