@@ -26,6 +26,7 @@ public class Main extends Application {
 		}
 	}
 	public static void main(String[] args) throws FileNotFoundException {
+
 		  launch(args);
 		 
 		 MedicineSearch.showProductAssortment();
@@ -33,4 +34,12 @@ public class Main extends Application {
 		 
 		 
 		  }
-}
+
+
+	 
+	 MedicineSearch.showProductAssortment();
+	 
+	 
+	 
+	  }
+

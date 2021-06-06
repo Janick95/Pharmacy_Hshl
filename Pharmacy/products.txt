@@ -1,2 +1,10 @@
-medikament1 12,95 Marke 6,00 Tabletten 1043 Kopfschmerzen
-med2 1,99 Marke 8 Pulver 5621 Rauschgift
+HoggarNight 5,84 STADA 10Stück Tabletten 4402066 Beruhigung,Schlaf&Nerven
+vitasprintB12 23,30 vitasprint 10Stück Trinkampullen 01853561 Beruhigung,Schlaf&Nerven
+LioranDiePassionsblume 9,31 niehaus 30Stück Hartkapseln 01633500 Beruhigung,Schlaf&Nerven
+Cetirizin 2,07 AbZPharma 20Stück Filmtabletten 06716159 Allergie&Asthma
+CetirizinHEXAL 3,76 HEXAL 75ml LösungZumEinnehmen 01830123 Allergie&Asthma
+Mometason1A 7,73 1APharma 10g Nasenspray 16035503 Allergie&Asthma
+BOTANICYLeberFitComplex 23,99 BOTANICY 60Stück Kapseln 08101248 Leber&Galle
+GelumTropfen 9,23 Dreluso 30ml Tropfen 04261950 Leber&Galle
+Zirkulin 5,64 ZIRKULIN 60Stück Dragees 11191463 Leber&Galle
+BuscopanPLUS 8,89 BUSCOPAN 20Stück Filmtabletten 02483617 Magen&Darm
