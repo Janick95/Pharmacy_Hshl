@@ -1,6 +1,6 @@
 package products;
 
-public class ShoppingCart extends Medicine{
+public class ShoppingCart {
 	
 	//Variablen
 	double totalPrice;
