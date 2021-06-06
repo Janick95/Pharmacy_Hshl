@@ -1,6 +1,6 @@
 package admin;
 
-public class ProductManager extends products.Medicine{
+public class ProductManager {
 
 	//Methoden
 	void addCategory() {

@@ -1,0 +1,2 @@
+medikament1 12,95 Marke 6,00 Tabletten 1043 Kopfschmerzen
+med2 1,99 Marke 8 Pulver 5621 Rauschgift

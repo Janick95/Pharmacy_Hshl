@@ -1,7 +1,12 @@
 package application;
 	
+
+
+import java.io.FileNotFoundException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
+import products.MedicineSearch;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -20,7 +25,12 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		launch(args);
+		
+		MedicineSearch.showProductAssortment();
+		
+		
+		
 	}
 }
