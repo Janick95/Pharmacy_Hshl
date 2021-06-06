@@ -1,7 +1,10 @@
 package application;
 
+import java.io.FileNotFoundException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
+import products.MedicineSearch;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -18,11 +21,36 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-
-	/**
-	 * public static void main(String[] args) { launch(args);
+	public static void main(String[] args) throws FileNotFoundException {
+	  launch(args);
+	 
+	 MedicineSearch.showProductAssortment();
+	 
+	 
+	 
+	  }
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*public static void main(String[] args) { 
+			
+			
+			
+		}	
+			
+			
+		
+		/*launch(args);
+	 
 	 * 
-	 * }
 	 * 
 	 * File Login = new File ("User.txt"); try { Scanner read = new Scanner(Login);
 	 * String line;
@@ -63,14 +91,7 @@ public class Main extends Application {
 	 * ArrayList<>(); if (username.equals(user) && password.equals(pass)) { Login =
 	 * true; break; } return userList; =======
 	 * 
-	 * public static void main(String[] args) throws FileNotFoundException {
-	 * launch(args);
 	 * 
-	 * MedicineSearch.showProductAssortment();
-	 * 
-	 * 
-	 * 
-	 *  }
 	 * 
 	 * public static void addUser() {
 	 * 
