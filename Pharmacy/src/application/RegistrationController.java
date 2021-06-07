@@ -43,8 +43,6 @@ public class RegistrationController {
 	@FXML
 	private Button btnRegistration;
 
-	StringProperty email = new SimpleStringProperty("");
-	StringProperty pass = new SimpleStringProperty("");
 
 	@FXML
 	public void initialize() {
@@ -53,48 +51,10 @@ public class RegistrationController {
 		cbAnrede.getSelectionModel().select("Herr");
 	}
 
-	/**
-	 * Validate the input fields
-	 * 
-	 * @return Result of validation
-	 */
-	private boolean validateRegistration() {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Login");
-		alert.setHeaderText(null);
-		boolean result = true;
-
-		// Check if email is empty
-		if (getEmail().trim().equals("")) {
-			result = false;
-			alert.setContentText("Sie haben keine E-Mail Adresse angegeben!");
-		} else {
-			// Check email match email pattern
-			String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
-					+ "A-Z]{2,7}$";
-			Pattern pat = Pattern.compile(emailRegex);
-			if (!pat.matcher(getEmail()).matches()) {
-				result = false;
-				alert.setContentText("Sie haben eine ungültige E-Mail Adresse angegeben!");
-			}
-		}
-
-		// Check if password is not empty
-		if (getPass().trim().equals("")) {
-			result = false;
-			alert.setContentText("Sie haben kein Passwort angegeben!");
-		}
-		// If errors show alert
-		if (!result) {
-			alert.showAndWait();
-		}
-
-		return result;
-	}
 
 	@FXML
 	private void handleButtonRegistrationAction(ActionEvent event) {
-		validateRegistration();
+		
 		
 		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("users.txt", true)))) {
 			out.println(cbAnrede.getValue() + "," + txtSurname.getText() + "," + txtName.getText() + ","
@@ -106,28 +66,11 @@ public class RegistrationController {
 
 	}
 
-	public String getEmail() {
-		return email.get();
-	}
-
-	public StringProperty emailProperty() {
-		return email;
-	}
-
-	public void setEmail(StringProperty email) {
-		this.email = email;
-	}
-
-	public String getPass() {
-		return pass.get();
-	}
-
-	public StringProperty passProperty() {
-		return pass;
-	}
-
-	public void setPass(StringProperty pass) {
-		this.pass = pass;
-	}
-
+	
+	/**
+	 * 
+	 * Validiate Textfields and  User Input
+	 * 
+	 */
+	
 }
