@@ -39,7 +39,7 @@ public class LoginController {
 		Path path = Paths.get("users.txt");
 		
 		//Count number of line in text file
-		long count = count = Files.lines(path).count();
+		long count =  Files.lines(path).count();
 		
 		///read each line
 		for (int i = 0; i < count; i++)
@@ -98,6 +98,8 @@ public class LoginController {
 		
 	}
 
+	
+	//
 	@FXML
 	private void handleOnClickEvent(MouseEvent event) {
 		try {

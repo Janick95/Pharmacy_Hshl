@@ -29,15 +29,14 @@ public class Main extends Application {
 
 		  launch(args);
 		 
-		 MedicineSearch.showProductAssortment();
+		 products.MedicineSearch.showProductAssortment();
 		 
 		 
 		 
 		  }
 
 
-	 
-	 MedicineSearch.showProductAssortment();
+	//	 MedicineSearch.showProductAssortment();
 	 
 	 
 	 
