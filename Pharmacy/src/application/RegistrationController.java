@@ -43,34 +43,88 @@ public class RegistrationController {
 	@FXML
 	private Button btnRegistration;
 
-
 	@FXML
 	public void initialize() {
 		cbAnrede.getItems().removeAll(cbAnrede.getItems());
 		cbAnrede.getItems().addAll("Herr", "Frau", "Divers");
 		cbAnrede.getSelectionModel().select("Herr");
-	}
 
+	}
 
 	@FXML
-	private void handleButtonRegistrationAction(ActionEvent event) {
-		
-		
-		try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("users.txt", true)))) {
-			out.println(cbAnrede.getValue() + "," + txtSurname.getText() + "," + txtName.getText() + ","
-					+ txtEmail1.getText() + "," + pfPassword1.getText());
+	private void handleButtonRegistrationAction(ActionEvent event) throws IOException {
+		if (validateData()) {
+			try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("users.txt", true)))) {
+				out.println(cbAnrede.getValue() + "," + txtSurname.getText() + "," + txtName.getText() + ","
+						+ txtEmail1.getText() + "," + pfPassword1.getText());
 
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
 		}
-
 	}
 
-	
 	/**
 	 * 
-	 * Validiate Textfields and  User Input
+	 * Validiate Textfields and User Input
 	 * 
+	 * @return Result of validation
 	 */
-	
+
+	private boolean validateData() {
+		Alert msg = new Alert(AlertType.ERROR);
+		boolean result = true;
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"
+				+ "A-Z]{2,7}$";
+		Pattern pat = Pattern.compile(emailRegex);
+		if (txtSurname.getText().equals("")) {
+			msg.setContentText("Bitte füllen Sie das Vornamen Feld aus!");
+			msg.showAndWait();
+			result = false;
+		} else {
+			if (txtName.getText().equals("")) {
+				msg.setContentText("Bitte füllen Sie das Nachnamen Feld aus!");
+				msg.showAndWait();
+				result = false;
+			} else {
+				if (txtEmail1.getText().equals("")) {
+					msg.setContentText("Bitte füllen Sie das erste E-Mail Feld aus!");
+					msg.showAndWait();
+					result = false;
+				} else {
+					if (txtEmail2.getText().equals("")) {
+						msg.setContentText("Bitte füllen Sie das zweite E Feld aus!");
+						msg.showAndWait();
+						result = false;
+					} else {
+						if (pfPassword1.getText().equals("")) {
+							msg.setContentText("Bitte füllen Sie das erste Passwort aus!");
+							msg.showAndWait();
+							result = false;
+						} else {
+							if (pfPassword2.getText().equals("")) {
+								msg.setContentText("Bitte füllen Sie das zweite Passwort Feld aus!");
+								msg.showAndWait();
+								result = false;
+							} else {
+								if (!pat.matcher(txtEmail1.getText()).matches()) {
+									msg.setContentText("Sie haben eine ungültige E-Mail Adresse angegeben!");
+									msg.showAndWait();
+									result = false;
+								} else {
+									if (!txtEmail1.getText().matches(txtEmail2.getText())) {
+										msg.setContentText("Ihre E-Mail Adressen stimmen nicht überein");
+										msg.showAndWait();
+										result = false;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+		return result;
+	}
 }
