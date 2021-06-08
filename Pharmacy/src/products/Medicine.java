@@ -39,6 +39,6 @@ public class Medicine {
 	//
 	@Override
 	public String toString() {
-		return String.format("Produktname: %s\nPreis: %f\nMarke: %s\nAnzahl: %s\nForm: %s\nPZN: %d\nKategorie: %s", productName, price, brand, size, form, pzn, category);
+		return String.format("Produktname: %s\nPreis: %f€\nMarke: %s\nAnzahl: %s\nForm: %s\nPZN: %d\nKategorie: %s", productName, price, brand, size, form, pzn, category);
 	}
 }

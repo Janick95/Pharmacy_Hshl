@@ -2,6 +2,8 @@ package application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import products.Medicine;
@@ -12,7 +14,7 @@ public class InformationOrganizer {
 
 	// Konstruktoren
 	public InformationOrganizer() {
-		File file = new File("products.txt");
+		File file = new File("src\\products.txt");
 
 		if (file.exists()) {
 			try {
