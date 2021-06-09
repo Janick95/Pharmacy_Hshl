@@ -62,6 +62,14 @@ public class RegistrationController {
 				ioe.printStackTrace();
 			}
 		}
+		/*
+		txtSurname.clear();
+		txtName.clear();
+		txtEmail1.clear();
+		txtEmail2.clear();
+		pfPassword1.clear();
+		pfPassword2.clear();
+		*/
 	}
 
 	/**

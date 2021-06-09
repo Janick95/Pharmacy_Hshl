@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -93,8 +94,10 @@ public class LoginController {
 				msg.setContentText("Falsches Passwort " + pfPassword.getText());
 				msg.showAndWait();
 			}
-
 		}
+		/*
+		txtEmail.clear();
+		pfPassword.clear();*/
 	}
 
 	//
