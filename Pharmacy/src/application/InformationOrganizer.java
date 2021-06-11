@@ -1,9 +1,10 @@
 package application;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 import products.Medicine;
@@ -11,14 +12,14 @@ import products.Medicine;
 public class InformationOrganizer {
 
 	static Scanner scanner;
-
-	// Konstruktoren
+	static File medFile = new File("src\\products.txt");
+	
+	// Constructors
 	public InformationOrganizer() {
-		File file = new File("src\\products.txt");
 
-		if (file.exists()) {
+		if (medFile.exists()) {
 			try {
-				scanner = new Scanner(file);
+				scanner = new Scanner(medFile);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -28,7 +29,7 @@ public class InformationOrganizer {
 		}
 	}
 
-	// Liest Medikamente aus
+	// read out medicines
 	public Medicine readMedicine() throws FileNotFoundException {
 
 		if (scanner.hasNext()) {
@@ -47,7 +48,24 @@ public class InformationOrganizer {
 
 	}
 
-	// Schlieﬂt die Textdatei bzw. den Scanner
+	public static int countLines () throws IOException {
+		int lines = 0;
+	
+		FileReader fr = new FileReader(medFile);
+        BufferedReader br = new BufferedReader(fr);
+        String line = br.readLine();
+        
+        while (line != null && !line.isEmpty()) {
+            line = br.readLine();
+            lines++;
+        }
+        
+        br.close();
+        
+		return lines;
+	} 
+	
+	// closes the opened file or scanner
 	public static void closeFile() {
 		scanner.close();
 	}

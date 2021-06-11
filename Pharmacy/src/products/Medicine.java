@@ -7,7 +7,7 @@ public class Medicine {
 
 	// Variablen
 	String productName;
-	double price;
+	public double price;
 	String brand;
 	String size;
 	String form;
