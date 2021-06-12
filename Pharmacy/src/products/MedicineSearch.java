@@ -3,7 +3,7 @@ package products;
 
 import java.io.FileNotFoundException;
 
-import application.InformationOrganizer;
+import application.ReaderWriter;
 
 
 public class MedicineSearch {
@@ -12,7 +12,7 @@ public class MedicineSearch {
 
 
 	public static void showProductAssortment() throws FileNotFoundException {
-		InformationOrganizer info = new InformationOrganizer();
+		ReaderWriter info = new ReaderWriter();
 		
 		Medicine m = info.readMedicine();
 		Medicine m2 = info.readMedicine();
@@ -44,7 +44,7 @@ public class MedicineSearch {
 		System.out.println(m9.toString());
 		System.out.println();
 		System.out.println(m10.toString());
-		InformationOrganizer.closeFile();
+		ReaderWriter.closeFile();
 	}
 	
 	

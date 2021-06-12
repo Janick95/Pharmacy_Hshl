@@ -9,13 +9,13 @@ import java.util.Scanner;
 
 import products.Medicine;
 
-public class InformationOrganizer {
+public class ReaderWriter {
 
 	static Scanner scanner;
 	static File medFile = new File("src\\products.txt");
-	
+
 	// Constructors
-	public InformationOrganizer() {
+	public ReaderWriter() {
 
 		if (medFile.exists()) {
 			try {
@@ -48,23 +48,24 @@ public class InformationOrganizer {
 
 	}
 
-	public static int countLines () throws IOException {
+	// counts the rows of a textfile
+	public static int countLines() throws IOException {
 		int lines = 0;
-	
+
 		FileReader fr = new FileReader(medFile);
-        BufferedReader br = new BufferedReader(fr);
-        String line = br.readLine();
-        
-        while (line != null && !line.isEmpty()) {
-            line = br.readLine();
-            lines++;
-        }
-        
-        br.close();
-        
+		BufferedReader br = new BufferedReader(fr);
+		String line = br.readLine();
+
+		while (line != null && !line.isEmpty()) {
+			line = br.readLine();
+			lines++;
+		}
+
+		br.close();
+
 		return lines;
-	} 
-	
+	}
+
 	// closes the opened file or scanner
 	public static void closeFile() {
 		scanner.close();

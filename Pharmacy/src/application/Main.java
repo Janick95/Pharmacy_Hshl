@@ -32,7 +32,7 @@ public class Main extends Application {
 		 
 		 products.MedicineSearch.showProductAssortment();
 		 
-		 int elements = InformationOrganizer.countLines();
+		 int elements = ReaderWriter.countLines();
 		 
 		  }
 

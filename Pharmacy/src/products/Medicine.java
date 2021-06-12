@@ -1,13 +1,12 @@
 package products;
 
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Medicine {
 
 	// Variablen
 	String productName;
-	public double price;
+	double price;
 	String brand;
 	String size;
 	String form;
@@ -23,7 +22,7 @@ public class Medicine {
 	//
 	// Konstruktoren
 	//
-	public  Medicine(String productName, Double price, String brand, String size, String form, int pzn, String category) {
+	public Medicine(String productName, Double price, String brand, String size, String form, int pzn, String category) {
 		this.productName = productName;
 		this.price = price;
 		this.brand = brand;
@@ -34,6 +33,64 @@ public class Medicine {
 
 	}
 
+	// Getter
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	public void setSize(String size) {
+		this.size = size;
+	}
+	
+	public void setForm(String form) {
+		this.form = form;
+	}
+	
+	public void setPZN(int pzn) {
+		this.pzn = pzn;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
+	// Setter
+	public String getProductName() {
+		return productName;
+	}
+	
+	public Double getPrice() {
+		return price;
+	}
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public String getSize() {
+		return size;
+	}
+	
+	public String getForm() {
+		return form;
+	}
+	
+	public int getPZN() {
+		return pzn;
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+	
 	//
 	// Methoden
 	//
